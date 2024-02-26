@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  # Mongodb service
+  mongo_db:
+    container_name: db_container
+    image: mongo:7.0
+    restart: always
+    env_file: .env
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+    volumes:
+      - mongo_data:/data/db
+
+  # Node api service
+  api:
+    build: .
+    ports:
+      - ${API_PORT}:${API_PORT}
+    environment:
+      DB_HOST: mongo_db
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+    depends_on:
+      - mongo_db
+
+volumes:
+  mongo_data: {}

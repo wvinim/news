@@ -17,7 +17,8 @@
     "migrate-linux-rollback": "export $(cat .env | xargs) && migrate-mongo down",
     "migrate-windows": "(for /F \"tokens=*\" %i in (.env) do set %i) > NUL && migrate-mongo up",
     "migrate-windows-rollback": "(for /F \"tokens=*\" %i in (.env) do set %i) > NUL && migrate-mongo down",
-    "start-migrate": "npm run migrate-linux && npm run start"
+    "start-migrate-linux": "npm run migrate-linux && npm run start",
+    "start-migrate-windows": "npm run migrate-windows && npm run start"
   },
   "keywords": [],
   "author": "",

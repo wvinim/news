@@ -26,6 +26,13 @@ describe("Integration Testing News", () => {
     expect(newNews.body._id).toBeTruthy();
   });
 
+  test("It should throw an error on create news", async () => {
+    const newNews = await createNewsHelper(app, {
+      url: "non-url",
+    });
+    expect(newNews.statusCode).toBe(400);
+  });
+
   test("It should get news list", async () => {
     await createNewsHelper(app);
 

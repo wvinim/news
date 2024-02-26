@@ -27,10 +27,11 @@ describe("Integration Testing News", () => {
   });
 
   test("It should get news list", async () => {
+    await createNewsHelper(app);
+
     const newsList = await getNewsListHelper(app);
     expect(newsList.statusCode).toBe(200);
 
-    //TODO: WILL FAIL, CREATE ADD NEWS ROUTE
     expect(newsList.body.length).toBeGreaterThan(0);
   });
 });

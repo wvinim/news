@@ -12,6 +12,7 @@ const NewsSchema = mongoose.Schema({
   },
   data_hora_publicacao: {
     type: "Date",
+    default: Date.now,
   },
   imagem: {
     type: "String",

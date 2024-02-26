@@ -2,14 +2,14 @@
 
 const express = require("express");
 
+const newsController = require("../controllers/newsController");
+
 const router = express.Router();
 
-const movieRoutes = (() => {
-  router.route("/news/list").get((req, res) => {
-    res.send("GET NEWS LIST SUCCESSFULL");
-  });
+const newsRoutes = (() => {
+  router.route("/news/list").get(newsController.listNews);
 
   return router;
 })();
 
-module.exports = movieRoutes;
+module.exports = newsRoutes;

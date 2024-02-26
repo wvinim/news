@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Grid } from "@mui/material";
@@ -31,6 +31,9 @@ const NewsDetails = () => {
   return (
     <Grid container spacing={2} sx={{ justifyContent: "center" }}>
       <Header />
+      <Link to={`/`} style={{ textDecoration: "none" }}>
+        Voltar
+      </Link>
       <Grid item xs={10}>
         <NewsView article={news} />
       </Grid>

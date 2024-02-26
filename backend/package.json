@@ -1,0 +1,32 @@
+{
+  "name": "news_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/{!(db),}.js"
+    ]
+  },
+  "scripts": {
+    "test": "jest --coverage --verbose --silent --runInBand",
+    "start": "node --env-file .env src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^9.1.4",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": "^20.11.1"
+  }
+}

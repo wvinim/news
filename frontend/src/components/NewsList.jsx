@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { Grid } from "@mui/material";
+import Header from "./Header";
 import NewsCard from "./NewsCard";
 import { NewsContext } from "../contexts/NewsContext";
 import axios from "axios";
@@ -20,6 +21,7 @@ const NewsList = () => {
 
   return (
     <Grid container spacing={2}>
+      <Header />
       {news.map((article, index) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
           <NewsCard article={article} />

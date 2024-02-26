@@ -29,6 +29,13 @@ const newsRoutes = (() => {
       newsController.updateNews
     );
 
+  router
+    .route("/news/:id")
+    .delete(
+      [newsMiddleware.validId, newsMiddleware.hasNews],
+      newsController.deleteNews
+    );
+
   return router;
 })();
 

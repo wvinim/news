@@ -49,4 +49,15 @@ newsController.updateNews = async (req, res) => {
   }
 };
 
+newsController.deleteNews = async (req, res) => {
+  try {
+    const id = req.params.id;
+    await newsServices.deleteNews(id);
+
+    res.status(200).json({ message: "News deleted" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 module.exports = newsController;

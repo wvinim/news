@@ -37,4 +37,8 @@ newsServices.updateNews = async (id, newsData) => {
   return await NewsModel.updateOne({ _id: id }, { $set: newsData });
 };
 
+newsServices.deleteNews = async (id) => {
+  return await NewsModel.deleteOne({ _id: id });
+};
+
 module.exports = newsServices;

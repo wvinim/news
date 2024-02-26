@@ -11,7 +11,12 @@
   },
   "scripts": {
     "test": "jest --coverage --verbose --silent --runInBand",
-    "start": "node --env-file .env src/app.js"
+    "start": "node --env-file .env src/app.js",
+    "migrate-linux": "export $(cat .env | xargs) && migrate-mongo up",
+    "migrate-linux-rollback": "export $(cat .env | xargs) && migrate-mongo down",
+    "migrate-windows": "(for /F \"tokens=*\" %i in (.env) do set %i) > NUL && migrate-mongo up",
+    "migrate-windows-rollback": "(for /F \"tokens=*\" %i in (.env) do set %i) > NUL && migrate-mongo down",
+    "start-migrate": "npm run migrate-linux && npm run start"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +24,7 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
+    "migrate-mongo": "^11.0.0",
     "mongoose": "^8.0.3"
   },
   "devDependencies": {

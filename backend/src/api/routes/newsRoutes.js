@@ -14,6 +14,8 @@ const newsRoutes = (() => {
 
   router.route("/news/list").get(newsController.listNews);
 
+  router.route("/news/:id").get(newsController.getNewsById);
+
   return router;
 })();
 

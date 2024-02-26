@@ -28,4 +28,9 @@ newsServices.listNews = async () => {
   return newsList;
 };
 
+newsServices.getNewsById = async (id) => {
+  const newsData = await NewsModel.findOne({ _id: id });
+  return newsData;
+};
+
 module.exports = newsServices;

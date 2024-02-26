@@ -22,7 +22,9 @@ const NewsList = () => {
 
   return (
     <Grid container spacing={2}>
-      <Header />
+      <Grid item xs={12}>
+        <Header />
+      </Grid>
       {newsList.map((article, index) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
           <NewsCard article={article} />

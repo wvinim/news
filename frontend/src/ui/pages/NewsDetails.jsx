@@ -30,10 +30,14 @@ const NewsDetails = () => {
 
   return (
     <Grid container spacing={2} sx={{ justifyContent: "center" }}>
-      <Header />
-      <Link to={`/`} style={{ textDecoration: "none" }}>
-        Voltar
-      </Link>
+      <Grid item xs={12}>
+        <Header />
+      </Grid>
+      <Grid item xs={10}>
+        <Link to={`/`} style={{ textDecoration: "none" }}>
+          Voltar
+        </Link>
+      </Grid>
       <Grid item xs={10}>
         <NewsView article={news} />
       </Grid>

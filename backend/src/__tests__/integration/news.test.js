@@ -5,6 +5,7 @@ const getNewsListHelper = require("../../api/helpers/getNewsListHelper");
 const createNewsHelper = require("../../api/helpers/createNewsHelper");
 const getNewsByIdHelper = require("../../api/helpers/getNewsByIdHelper");
 const updateNewsHelper = require("../../api/helpers/updateNewsHelper");
+const deleteNewsHelper = require("../../api/helpers/deleteNewsHelper");
 
 let app;
 
@@ -78,5 +79,22 @@ describe("Integration Testing News", () => {
     });
 
     expect(updateRequest.statusCode).toBe(400);
+  });
+
+  test("It should do delete news", async () => {
+    const newNews = await createNewsHelper(app);
+
+    const deleteRequest = await deleteNewsHelper(app, newNews.body._id);
+
+    expect(deleteRequest.statusCode).toBe(200);
+
+    const deletedNews = await getNewsByIdHelper(app, newNews.body._id);
+    expect(deletedNews.statusCode).toBe(404);
+  });
+
+  test("It should throw an error on delete news", async () => {
+    const deleteRequest = await updateNewsHelper(app, "invalid-id");
+
+    expect(deleteRequest.statusCode).toBe(400);
   });
 });

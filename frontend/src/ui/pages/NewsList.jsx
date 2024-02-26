@@ -1,9 +1,9 @@
 import { useContext, useEffect } from "react";
 import axios from "axios";
 import { Grid } from "@mui/material";
-import Header from "./Header";
-import NewsCard from "./NewsCard";
-import { NewsContext } from "../contexts/NewsContext";
+import Header from "../components/Header";
+import NewsCard from "../components/NewsCard";
+import { NewsContext } from "../../contexts/NewsContext";
 
 const NewsList = () => {
   const { newsList, setNewsList } = useContext(NewsContext);

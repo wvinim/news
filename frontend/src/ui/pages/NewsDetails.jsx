@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Grid } from "@mui/material";
-import Header from "./Header";
-import NewsView from "./NewsView";
+import Header from "../components/Header";
+import NewsView from "../components/NewsView";
 
 const NewsDetails = () => {
   const navigate = useNavigate();

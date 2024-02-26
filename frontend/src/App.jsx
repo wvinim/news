@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NewsList from "./components/NewsList";
-import NewsDetails from "./components/NewsDetails";
+import NewsList from "./ui/pages/NewsList";
+import NewsDetails from "./ui/pages/NewsDetails";
 import { NewsProvider } from "./contexts/NewsContext";
 
 function App() {

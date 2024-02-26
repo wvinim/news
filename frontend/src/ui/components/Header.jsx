@@ -1,7 +1,7 @@
 import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import logo from "../assets/logo-header.png";
+import logo from "../../assets/logo-header.png";
 
 const Header = () => {
   return (

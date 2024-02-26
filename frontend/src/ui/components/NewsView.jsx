@@ -14,15 +14,9 @@ const NewsView = ({ article }) => {
         <Typography gutterBottom variant="caption" component="div">
           {article.chapeu}
         </Typography>
-        <Typography gutterBottom variant="h6" component="div">
+        <Typography gutterBottom variant="h4" component="div">
           {article.titulo}
         </Typography>
-
-        <img
-          src={article.thumbnail}
-          alt={article.titule}
-          style={{ maxWidth: "100%", height: "auto" }}
-        />
 
         <div dangerouslySetInnerHTML={{ __html: article.conteudo }} />
       </CardContent>

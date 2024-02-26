@@ -14,7 +14,20 @@ const newsRoutes = (() => {
 
   router.route("/news/list").get(newsController.listNews);
 
-  router.route("/news/:id").get(newsController.getNewsById);
+  router
+    .route("/news/:id")
+    .get(newsMiddleware.validId, newsController.getNewsById);
+
+  router
+    .route("/news/:id")
+    .put(
+      [
+        newsMiddleware.validId,
+        newsMiddleware.hasNews,
+        newsMiddleware.validateNews,
+      ],
+      newsController.updateNews
+    );
 
   return router;
 })();

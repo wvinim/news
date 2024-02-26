@@ -37,4 +37,16 @@ newsController.getNewsById = async (req, res) => {
   }
 };
 
+newsController.updateNews = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const newsData = req.body;
+    await newsServices.updateNews(id, newsData);
+
+    res.status(204).json({ message: "News updated" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 module.exports = newsController;

@@ -4,6 +4,11 @@ const NewsModel = require("../models/News");
 
 let newsServices = {};
 
+newsServices.createNews = async (data) => {
+  const newNews = await new NewsModel(data);
+  return await newNews.save();
+};
+
 newsServices.listNews = async () => {
   const newsList = await NewsModel.aggregate([
     {

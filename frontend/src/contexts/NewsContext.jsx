@@ -1,12 +1,11 @@
 import { createContext, useState } from "react";
-
 export const NewsContext = createContext();
 
 export const NewsProvider = ({ children }) => {
-  const [news, setNews] = useState([]);
+  const [newsList, setNewsList] = useState([]);
 
   return (
-    <NewsContext.Provider value={{ news, setNews }}>
+    <NewsContext.Provider value={{ newsList, setNewsList }}>
       {children}
     </NewsContext.Provider>
   );

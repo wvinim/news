@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const { dropDatabase } = require("../../loaders/db");
 const getNewsListHelper = require("../../api/helpers/getNewsListHelper");
+const createNewsHelper = require("../../api/helpers/createNewsHelper");
 
 let app;
 
@@ -19,6 +20,12 @@ beforeEach(async () => {
 });
 
 describe("Integration Testing News", () => {
+  test("It should do create news", async () => {
+    const newNews = await createNewsHelper(app);
+    expect(newNews.statusCode).toBe(201);
+    expect(newNews.body._id).toBeTruthy();
+  });
+
   test("It should get news list", async () => {
     const newsList = await getNewsListHelper(app);
     expect(newsList.statusCode).toBe(200);

@@ -13,12 +13,15 @@
     "test": "jest --verbose --silent --runInBand",
     "start": "node --env-file .env src/app.js",
     "dev": "node --watch --env-file .env src/app.js",
+    "migrate": "migrate-mongo up",
+    "migrate-rollback": "migrate-mongo down",
+    "migrate-start": "npm run migrate && npm run start",
     "migrate-linux": "export $(cat .env | xargs) && migrate-mongo up",
     "migrate-linux-rollback": "export $(cat .env | xargs) && migrate-mongo down",
+    "migrate-linux-start": "npm run migrate-linux && npm run start",
     "migrate-windows": "(for /F \"tokens=*\" %i in (.env) do set %i) > NUL && migrate-mongo up",
     "migrate-windows-rollback": "(for /F \"tokens=*\" %i in (.env) do set %i) > NUL && migrate-mongo down",
-    "start-migrate-linux": "npm run migrate-linux && npm run start",
-    "start-migrate-windows": "npm run migrate-windows && npm run start"
+    "migrate-windows-start": "npm run migrate-windows && npm run start"
   },
   "keywords": [],
   "author": "",

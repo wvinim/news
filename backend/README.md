@@ -107,3 +107,4 @@ No arquivo Dockerfile, o gerenciador de migrações está setado para executar a
 - Adicionar lógica para manter um histórico das alterações feitas pelos usuários
 - Adicionar mais validações e aplicar em mais campos
 - Padronizar o idioma dos modelos e toda a aplicação (De acordo com a convenção do time/empresa)
+- Configurar "cors" corretamente para os domínios seguros

@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const { dropDatabase } = require("../../loaders/db");
 const getNewsListHelper = require("../../api/helpers/getNewsListHelper");
 const createNewsHelper = require("../../api/helpers/createNewsHelper");
+const getNewsByIdHelper = require("../../api/helpers/getNewsByIdHelper");
 
 let app;
 
@@ -40,5 +41,20 @@ describe("Integration Testing News", () => {
     expect(newsList.statusCode).toBe(200);
 
     expect(newsList.body.length).toBeGreaterThan(0);
+  });
+
+  test("It should get news by id", async () => {
+    const newNews = await createNewsHelper(app);
+
+    const newsById = await getNewsByIdHelper(app, newNews.body._id);
+
+    expect(newsById.statusCode).toBe(200);
+    expect(newsById.body.url).toBe(newNews.body.url);
+  });
+
+  test("It should throw an error on get invalid news by id", async () => {
+    const newsById = await getNewsByIdHelper(app);
+
+    expect(newsById.statusCode).toBe(404);
   });
 });

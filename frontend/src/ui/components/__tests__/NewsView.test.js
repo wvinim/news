@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 import NewsView from "../NewsView";
 
 describe("NewsView Component", () => {
-  test("renders NewsView with correct image data", () => {
+  test("renders NewsView with correct dom elements", () => {
     const mockNews = {
       chapeu: "mock chapeu",
       titulo: "mock titulo",

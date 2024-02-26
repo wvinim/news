@@ -10,8 +10,9 @@
     ]
   },
   "scripts": {
-    "test": "jest --coverage --verbose --silent --runInBand",
+    "test": "jest --verbose --silent --runInBand",
     "start": "node --env-file .env src/app.js",
+    "dev": "node --watch --env-file .env src/app.js",
     "migrate-linux": "export $(cat .env | xargs) && migrate-mongo up",
     "migrate-linux-rollback": "export $(cat .env | xargs) && migrate-mongo down",
     "migrate-windows": "(for /F \"tokens=*\" %i in (.env) do set %i) > NUL && migrate-mongo up",

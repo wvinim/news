@@ -102,7 +102,7 @@
 		{
 			"name": "CREATE",
 			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",

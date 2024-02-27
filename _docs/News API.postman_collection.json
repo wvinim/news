@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "f8e2ea9b-f494-4710-afa6-f4c6b783e054",
+		"name": "News API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2959442"
+	},
+	"item": [
+		{
+			"name": "GET LIST",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/news/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"news",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/news/65dc3e832d00cb9182e59e41",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"news",
+						"65dc3e832d00cb9182e59e41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"url\": \"http://google1.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/news/65dc3e832d00cb9182e59e41",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"news",
+						"65dc3e832d00cb9182e59e41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/news/65dc3e832d00cb9182e59e41",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"news",
+						"65dc3e832d00cb9182e59e41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"chapeu\": \"NOVA NOTÍCIA\",\r\n    \"url\": \"https://www.estadao.com.br/politica/monica-gugliano/visita-de-integrante-do-cv-a-ministerio-dificulta-a-vida-de-flavio-dino-na-corrida-a-vaga-ao-stf/\",\r\n    \"titulo\": \"NOVO TÍTULO\",\r\n    \"imagem\": \"https://www.estadao.com.br/resizer/GoaFoVG3UQNupZaW1aEk-ICk4CE=/380x0/filters:quality(70):format(jpg)/cloudfront-us-east-1.images.arcpublishing.com/estadao/3XFU3QE5O5CZNKJUXF3E2FRQ3Q.jpg\",\r\n    \"thumbnail\": \"https://www.estadao.com.br/resizer/3m0u6y18yF_RqtUEY3o_R9uRIFc=/350x199/smart/filters:quality(70):format(jpg)/arc-anglerfish-arc2-prod-estadao/public/3XFU3QE5O5CZNKJUXF3E2FRQ3Q.jpg\",\r\n    \"conteudo\": \"<p>NOVO CONTEUDO</p>\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/news/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"news",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -11,6 +11,7 @@ newsServices.createNews = async (data) => {
 
 newsServices.listNews = async () => {
   const newsList = await NewsModel.aggregate([
+    { $sort: { data_hora_publicacao: -1 } },
     {
       $project: {
         _id: 0,

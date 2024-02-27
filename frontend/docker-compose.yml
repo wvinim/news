@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  app:
+    container_name: vite_client
+    build:
+      context: .
+      dockerfile: Dockerfile.preview
+    env_file: .env
+    ports:
+      - ${VITE_CLIENT_PORT}:${VITE_CLIENT_PORT}
